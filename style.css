@@ -9,3 +9,9 @@
 .body{
     margin: 0px;
 }
+
+.boy{
+    width: 250px;
+    margin-top: 500px;
+    position: absolute;
+}

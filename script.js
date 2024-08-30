@@ -7,6 +7,7 @@ function keyCheck(event){
         if(runWorkerId==0){
 
             runWorkerId = setInterval(run,100);
+            moveBackgroundWorkerId = setInterval(moveBackground,100);
         }
 
 
@@ -61,6 +62,12 @@ function jump(){
         boyId.style.marginTop = boyMarginTop + "px";
     }
 
+    //jump land
+    if(jumpImageNumber >= 8 ){
+        boyMarginTop = boyMarginTop + 30;
+        boyId.style.marginTop = boyMarginTop + "px";
+    }
+
     //jump image crash
     if(jumpImageNumber==13){
         jumpImageNumber=1;
@@ -71,8 +78,18 @@ function jump(){
         jumpWorkerId = 0;
     }
 
-    boyId.src = "Jump (" +jumpImageNumber+ ").png"
+    boyId.src = "Jump (" +jumpImageNumber+ ").png";
 
 
+}
 
+//background
+var backgroundId = document.getElementById("background");
+var positionX = 0;
+var moveBackgroundWorkerId = 0;
+
+function moveBackground(){
+
+    positionX = positionX - 20;
+    backgroundId.style.backgroundPositionX = positionX + "px";
 }

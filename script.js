@@ -18,6 +18,8 @@ function keyCheck(event){
 
         if(jumpWorkerId==0){
 
+
+             clearInterval(runWorkerId);
             jumpWorkerId= setInterval(jump,100);
         }
 
@@ -47,14 +49,26 @@ function run(){
 //boy jump
 var jumpWorkerId = 0;
 var jumpImageNumber = 1;
+var boyMarginTop = 500;
 
 function jump(){
 
     jumpImageNumber++;
 
+    //jump fly
+    if(jumpImageNumber<=7){
+        boyMarginTop = boyMarginTop - 30;
+        boyId.style.marginTop = boyMarginTop + "px";
+    }
+
     //jump image crash
     if(jumpImageNumber==13){
         jumpImageNumber=1;
+
+        clearInterval(jumpWorkerId);
+        runWorkerId=setInterval(run,100);
+
+        jumpWorkerId = 0;
     }
 
     boyId.src = "Jump (" +jumpImageNumber+ ").png"

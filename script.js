@@ -8,6 +8,8 @@ function keyCheck(event){
 
             runWorkerId = setInterval(run,100);
             moveBackgroundWorkerId = setInterval(moveBackground,100);
+            scoreWorkerId = setInterval(updateScore,100);
+
         }
 
 
@@ -92,4 +94,16 @@ function moveBackground(){
 
     positionX = positionX - 20;
     backgroundId.style.backgroundPositionX = positionX + "px";
+}
+
+//score
+var scoreId = document.getElementById("score");
+var scoreWorkerId = 0;
+var newScore = 0;
+
+function updateScore(){
+
+    newScore++;
+    scoreId.innerHTML = newScore;
+
 }

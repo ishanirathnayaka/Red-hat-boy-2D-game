@@ -9,6 +9,7 @@ function keyCheck(event){
             runWorkerId = setInterval(run,100);
             moveBackgroundWorkerId = setInterval(moveBackground,100);
             scoreWorkerId = setInterval(updateScore,100);
+            createBlockWorkerId = setInterval(createBlock,100);
 
         }
 
@@ -115,5 +116,5 @@ function createBlock(){
     var block = document.createElement("div");
 
     document.getElementById("background").appendChild(block);
-    
+
 }

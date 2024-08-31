@@ -107,3 +107,13 @@ function updateScore(){
     scoreId.innerHTML = newScore;
 
 }
+
+//create block
+
+function createBlock(){
+
+    var block = document.createElement("div");
+
+    document.getElementById("background").appendChild(block);
+    
+}

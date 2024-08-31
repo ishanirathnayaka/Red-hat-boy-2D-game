@@ -33,6 +33,7 @@ function keyCheck(event){
 }
 
 //boy run
+var boyMarginTop = 425;
 var runWorkerId = 0;
 var boyId = document.getElementById("boy");
 var runImageNumber = 1;
@@ -53,7 +54,7 @@ function run(){
 //boy jump
 var jumpWorkerId = 0;
 var jumpImageNumber = 1;
-var boyMarginTop = 500;
+var boyMarginTop = 400;
 
 function jump(){
 

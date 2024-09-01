@@ -11,6 +11,7 @@ function keyCheck(event){
             scoreWorkerId = setInterval(updateScore,100);
             createBlockWorkerId = setInterval(createBlock,100);
 
+
         }
 
 
@@ -111,11 +112,25 @@ function updateScore(){
 }
 
 //create block
+var blockMargiLeft = 100;
+var createBlockWorkerId = 0;
+var blockNumber = 1;
 
 function createBlock(){
 
     var block = document.createElement("div");
+    block.className = "block";
+    block.id = "block" + blockNumber;
+
+    blockNumber++;
+
+    var gap = Math.random()*(300-100) + 100;
+
+    blockMargiLeft = blockMargiLeft +gap;
+    block.style.marginLeft = blockMargiLeft + "px";
 
     document.getElementById("background").appendChild(block);
 
 }
+
+// move block

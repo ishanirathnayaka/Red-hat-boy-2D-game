@@ -10,6 +10,7 @@ function keyCheck(event){
             moveBackgroundWorkerId = setInterval(moveBackground,100);
             scoreWorkerId = setInterval(updateScore,100);
             createBlockWorkerId = setInterval(createBlock,100);
+            moveBlockWorkerId= setInterval(moveBlock,100);
 
 
         }
@@ -81,6 +82,23 @@ function jump(){
         runWorkerId=setInterval(run,100);
 
         jumpWorkerId = 0;
+
+            //startin a jump
+            if(scoreWorkerId==0){
+                scoreWorkerId=setInterval(updateScore,100);
+            }
+
+            if (moveBackgroundWorkerId==0){
+                moveBackgroundWorkerId=setInterval(moveBackground,100);
+            }
+
+            if(createBlockWorkerId==o){
+                createBlockWorkerId=setInterval(createBlock,100);
+            }
+
+            if(moveBlockWorkerId==0){
+                moveBlockWorkerId=setInterval(moveBlock,100);
+            }
     }
 
     boyId.src = "Jump (" +jumpImageNumber+ ").png";
@@ -124,7 +142,7 @@ function createBlock(){
 
     blockNumber++;
 
-    var gap = Math.random()*(300-100) + 100;
+    var gap = Math.random()*(1000-400) + 400;
 
     blockMargiLeft = blockMargiLeft +gap;
     block.style.marginLeft = blockMargiLeft + "px";
@@ -134,3 +152,15 @@ function createBlock(){
 }
 
 // move block
+var moveBlockWorkerId=0;
+
+function moveBlock(){
+    for(var i=1;i<=blockNumber;i++){
+
+        var currentBlock = document.getElementById("block" + i)
+        var currentBlockMarginLeft = currentBlock.style.marginLeft;
+        var newBlockMarginLeft = parseInt(currentBlockMarginLeft) - 20;
+        
+        currentBlock.style.marginLeft = newBlockMarginLeft + "px";
+    }
+}

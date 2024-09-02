@@ -37,3 +37,26 @@
     overflow-x: hidden;
     
 }
+.endScreen{
+    position: absolute;
+    width: 500px;
+    height: 350px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 60px;
+
+    margin-left: 600px;
+    margin-top: 100px;
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+    flex-direction: column;
+}
+
+.endScore{
+    font-size: 70px;
+    color: red;
+}

@@ -164,3 +164,10 @@ function moveBlock(){
         currentBlock.style.marginLeft = newBlockMarginLeft + "px";
     }
 }
+
+//page reload
+
+function reload(){
+
+    location.reload();
+}

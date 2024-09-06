@@ -1,3 +1,14 @@
+//Run sound
+var runSound = new Audio("run.mp3");
+runSound.loop = true;
+
+//Jump sound
+var jumpSound = new Audio("jump.mp3");
+
+//Dead sound
+var deadSound = new Audio ("dead.mp3");
+
+
 // key event
 function keyCheck(event){
 
